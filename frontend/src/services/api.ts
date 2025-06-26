@@ -1,6 +1,6 @@
 // API service for communicating with the backend
 
-const API_BASE_URL = 'http://localhost:5003'; // Backend Flask server
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003'; // Backend server URL from environment
 
 // Common fetch options for all API calls
 const commonFetchOptions = {
