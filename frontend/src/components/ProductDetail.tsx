@@ -22,7 +22,7 @@ const ProductDetail = () => {
   const [colorsInProgress, setColorsInProgress] = useState<Set<string>>(new Set())
 
   // Use refs to track animation state
-  const animationRef = useRef<NodeJS.Timeout | null>(null)
+  const animationRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const currentPercentRef = useRef(0)
   const avatarImageRef = useRef<string | null>(null)
   const avatarColorRef = useRef<string | null>(null)
@@ -113,7 +113,7 @@ const ProductDetail = () => {
       }, REVEAL_INTERVAL);
 
       // Store the interval so we can clear it on cleanup
-      animationRef.current = intervalId as any;
+      animationRef.current = intervalId;
       console.log('Animation interval started with ID:', intervalId);
 
       // Cleanup function to clear interval

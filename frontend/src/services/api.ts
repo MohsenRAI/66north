@@ -24,6 +24,7 @@ export interface HeadSwapResult {
   output_image: string;
   analysis: AnalysisResult;
   pregenerated_image_url: string;
+  warning?: string;
 }
 
 export class ApiService {
